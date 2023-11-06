@@ -24,6 +24,7 @@ const debouce = (fn, wait = 0) => {
 		}
 		timer = setTimeout(() => {
 			fn.apply(this, args);
+			clearTimeout(timer);
 		}, wait);
 	};
 };

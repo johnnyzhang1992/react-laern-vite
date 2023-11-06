@@ -7,8 +7,15 @@ const HookItem = (props) => {
             console.log('---effect--destory--item')
         }
 	}, [props.count]);
-	console.log("I am rendering");
-	return <p>字组件，count:{props.count}</p>;
+    console.log("I am rendering", props.count);
+    useLayoutEffect(() => {
+        console.log('layoutEffect----item')
+        return () => {
+            console.log('---layoutEffect--item--destory')
+        }
+    })
+    return <p>字组件，count:{props.count}</p>;
+    
 };
 
 // function areEqual(prevProps, nextProps) {
@@ -83,7 +90,7 @@ const EffectTest = () => {
 			return preCount + 1;
 		});
 	}, [count]);
-    console.log('----rerender---')
+    console.log('----rerender---', count)
     useLayoutEffect(() => {
         console.log('layoutEffect----')
         return () => {
@@ -96,6 +103,7 @@ const EffectTest = () => {
             console.log('---layoutEffect--destory1')
         }
     })
+    console.log('---render')
 	return (
 		<div className="container">
 			<div>

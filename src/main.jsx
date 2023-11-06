@@ -11,6 +11,7 @@ import TestHook from "./pages/hooks";
 import EffectTest from "./pages/effect";
 import HocPage from "./pages/Hoc";
 import TestState from "./pages/state";
+import TestComponent from "./pages/componentTest";
 
 ReactDOM.render(
 	// <React.StrictMode>
@@ -42,6 +43,9 @@ ReactDOM.render(
 					<li>
 						<Link to="/state">state</Link>
 					</li>
+					<li>
+						<Link to="/component">TestComponent</Link>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -54,6 +58,7 @@ ReactDOM.render(
 			<Route path="/effets" component={EffectTest} />
 			<Route path="/hoc" component={HocPage} />
 			<Route path="/state" component={TestState} />
+			<Route path="/component" component={TestComponent} />
 		</Switch>
 	</Router>,
 	// </React.StrictMode>,

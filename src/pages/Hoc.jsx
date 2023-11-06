@@ -96,8 +96,9 @@ const ComponentC = loadingHoc(CompC);
 const ComponentD = loadingHoc(CompD);
 const ComponentE = loadingHoc(CompE);
 
-export default function Index() {
+export default function Index(props) {
 	const [isShow, setIsShow] = useState(false);
+	console.log(props);
 	return (
 		<div className="container">
 			<ComponentA />
